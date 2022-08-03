@@ -25,7 +25,7 @@ rm $prefixinput.mapped.aln.bam
 rm $prefixinput.R1.sai
 rm $prefixinput.R2.sai
 
-# # # treatment of alignment bamfiles. This is common for databases, but has to be done separately ###
+# Extract stat info of alignment bamfiles. ###
 # Representative refSeq
 cd /home/lola/projects/goldStd/results/reprBact/
 outbamfile=$prefixinput.bam
