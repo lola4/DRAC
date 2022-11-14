@@ -5,7 +5,7 @@ DRAC is conceived as a post-processing tool to be run on a NGS file (either fast
 
 With BWA identifications, one cannot conclude whether the reads are true or false positives, DRAC pipeline afterwards will apply a method to ensure that counts belonging to a particular genome are well spread and covering a directly proportional part of it. 
 
-DRAC is is a binner tool that takes a BAM file as input (with a minor change it can start from a non-host reads fastq file) that keeps both the host aligned reads and the unmapped (Discarded by the aligner, for whatever reason), that DRAC will classify by the bitwise flag (samtools). Afterwards, DRAC trims the putative remaining adapters, trims the low complexity sequences with the DUST algorithm, trims the low quality tails and in dismisses the short reads after this process, saving them in a fastq file
+DRAC is is a binner tool that takes a BAM file as input (with a minor change it can start from a non-host reads fastq file) that keeps both the host aligned reads and the unmapped (Discarded by the aligner, for whatever reason), that DRAC will classify by the bitwise flag (samtools). Afterwards, DRAC trims the putative remaining adapters, trims the low complexity sequences with the DUST algorithm, trims the low quality tails and in dismisses the short reads after this process, saving them in a fastq file. 
 
 Since the remaining reads will be unsorted and one of the pairs members is sometimes lost, the pipeline fixes the pairs to keep only the paired reads. It will also save the singletons in case the user needs to analyze them in a further step.
 
@@ -20,3 +20,5 @@ The unique aspect of DRAC pipeline is that it will take into account the coverag
 Following these principles, we developed when we know how long the reads are, and how much they should cover, we can calculate an internal score to discard those reads with low coverage (according to what it would be expected). By doing so, DRAC penalizes bacterial assignments with very poor coverage and will dismiss them, while it will retain the most reliable (scattered through the genome) ones, most probably, true positives.
 
 The pipeline also performs some calculations, proportions, creates a global table in case of studying several samples, and in the last steps it will perform the counts normalization and statistical analysis, but these aspects are beyond the scope of the present article.
+
+DRAC is not a metagenomics classifier, but instead a pipeline that was developed to scan Next-generation sequencing (NGS) files for putatively present microbiota or contaminant microbes.
