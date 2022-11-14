@@ -1,5 +1,4 @@
-# DRAC
-Discarded Reads Alignment and Coverage
+# DRAC: Discarded Reads Alignment and Coverage
 
 DRAC is conceived as a post-processing tool to be run on a NGS file (either fastq or SAM/BAM format) of previously discarded reads that could not be aligned to the host genome (it may be human or any other host). It is mostly devised to be run on a single organism tissue RNA-Seq (also Whole Exome Sequencing or Whole Genome Sequencing are supported) rather than a high biomass metagenomic design (i.e., it is not recommended for high biomass studies, e.g. feces or saliva). This is because the program that DRAC uses for identifying the microbes is the well know Burrows-Wheeler aligner (BWA), that it is not designed for that sort of job, besides of being slow due to the alignment process. Instead, its suitable to align a subset of Illumina paired-end (or single) sequencing data from previously aligned reads to the human (or host) reference genome, to complete bacterial genomes in the RefSeq database (as was performed in a seminal paper that identified bacteria that may be present in human tumor samples (DOI: 10.1186/s40168-016-0224-8 )
 
